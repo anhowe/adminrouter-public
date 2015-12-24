@@ -20,7 +20,7 @@ function common.mesos_dns_get_srv(framework_name)
     local res = ngx.location.capture("/mesos_dns/v1/services/_" .. framework_name .. "._tcp.marathon.mesos")
     local records = cjson.decode(res.body)
     return records
-ends
+end
 
 function string:split(sep)
     local sep, fields = sep or " ", {}
